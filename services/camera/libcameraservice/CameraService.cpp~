@@ -886,10 +886,16 @@ void CameraService::loadSound() {
     property_get("persist.camera.shutter.disable", value, "0");
     int disableSound = atoi(value);
 
+<<<<<<< HEAD
     if(!disableSound) {
+        mSoundPlayer[SOUND_SHUTTER] = newMediaPlayer("/system/media/audio/ui/camera_click.ogg");
+        mSoundPlayer[SOUND_RECORDING] = newMediaPlayer("/system/media/audio/ui/VideoRecord.ogg");
+=======
+    if(enableSound) {
         mSoundPlayer[SOUND_SHUTTER] = newMediaPlayer("/data/system/soundlinks/camera_click.ogg");
         mSoundPlayer[SOUND_RECORDING] = newMediaPlayer("/data/system/soundlinks/VideoRecord_start.ogg");
         mSoundPlayer[SOUND_RECORDING_STOP] = newMediaPlayer("/data/system/soundlinks/VideoRecord_stop.ogg");
+>>>>>>> bb6c9c9... Merge "[2/3] FW AV: Audio Theme Support" into pac-4.4
     }
     else {
         mSoundPlayer[SOUND_SHUTTER] = NULL;
